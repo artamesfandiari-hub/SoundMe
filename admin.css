@@ -1,0 +1,857 @@
+/* =========================================================
+   SOUNDME
+   admin.css
+   Admin Panel
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  background:#050505;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+  position:relative;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-3;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,255,255,.055),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(130,20,20,.08),
+      transparent 32%
+    );
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:20;
+  opacity:.025;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.8) 0,
+      rgba(255,255,255,.8) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.admin-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 7vw;
+
+  background:rgba(5,5,5,.78);
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+}
+
+.admin-logo{
+  color:#fff;
+  text-decoration:none;
+
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-1.5px;
+}
+
+.admin-logo span{
+  font-weight:400;
+  color:#777;
+}
+
+.admin-nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.admin-nav-links a{
+  color:#777;
+  text-decoration:none;
+
+  font-size:10px;
+  font-weight:bold;
+
+  letter-spacing:1.8px;
+
+  transition:.2s ease;
+}
+
+.admin-nav-links a:hover{
+  color:#fff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.admin-container{
+  width:min(1000px,90vw);
+  margin:0 auto;
+
+  padding:
+    80px 0
+    140px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-header{
+  margin-bottom:45px;
+}
+
+.admin-eyebrow{
+  color:#666;
+
+  font-size:9px;
+  font-weight:bold;
+
+  letter-spacing:4px;
+
+  margin-bottom:16px;
+}
+
+.admin-header h1{
+  font-size:clamp(
+    48px,
+    8vw,
+    86px
+  );
+
+  line-height:.9;
+
+  letter-spacing:-5px;
+
+  font-weight:800;
+}
+
+.admin-header h1 span{
+  color:#666;
+}
+
+.admin-header p{
+  max-width:560px;
+
+  margin-top:24px;
+
+  color:#666;
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.admin-card{
+  position:relative;
+
+  padding:28px;
+
+  margin-bottom:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.015)
+    );
+
+  border:1px solid rgba(255,255,255,.09);
+
+  border-radius:18px;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.25);
+
+  overflow:hidden;
+}
+
+.admin-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+
+  opacity:.6;
+}
+
+.admin-card-title{
+  margin-bottom:24px;
+
+  color:#aaa;
+
+  font-size:10px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#uploadForm{
+  display:flex;
+  flex-direction:column;
+  gap:17px;
+}
+
+.admin-field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.admin-field label{
+  color:#666;
+
+  font-size:9px;
+  font-weight:bold;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+}
+
+.admin-field input{
+  width:100%;
+
+  height:48px;
+
+  padding:0 15px;
+
+  border:1px solid rgba(255,255,255,.09);
+
+  border-radius:10px;
+
+  outline:none;
+
+  background:rgba(255,255,255,.035);
+
+  color:#ddd;
+
+  font-family:inherit;
+  font-size:12px;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.admin-field input:focus{
+  border-color:rgba(255,255,255,.28);
+
+  background:rgba(255,255,255,.055);
+}
+
+.admin-field input::placeholder{
+  color:#444;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.admin-file{
+  position:relative;
+}
+
+.admin-file input[type="file"]{
+  height:auto;
+
+  padding:13px;
+
+  cursor:pointer;
+
+  color:#777;
+}
+
+.admin-file input[type="file"]::file-selector-button{
+  margin-right:12px;
+
+  padding:9px 13px;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  border-radius:8px;
+
+  background:#111;
+
+  color:#aaa;
+
+  cursor:pointer;
+
+  font-size:9px;
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+  transition:.2s ease;
+}
+
+.admin-file input[type="file"]::file-selector-button:hover{
+  background:#1b1b1b;
+  color:#fff;
+}
+
+
+/* =========================================================
+   UPLOAD BUTTON
+========================================================= */
+
+.admin-submit{
+  width:100%;
+
+  height:52px;
+
+  margin-top:5px;
+
+  border:0;
+
+  border-radius:11px;
+
+  background:#fff;
+
+  color:#000;
+
+  cursor:pointer;
+
+  font-size:10px;
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  transition:
+    transform .15s ease,
+    opacity .15s ease;
+}
+
+.admin-submit:hover{
+  opacity:.88;
+}
+
+.admin-submit:active{
+  transform:scale(.985);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#adminMessage{
+  min-height:0;
+
+  margin-top:15px;
+
+  color:#666;
+
+  font-size:10px;
+
+  letter-spacing:.7px;
+
+  opacity:0;
+
+  transition:.25s ease;
+}
+
+#adminMessage.visible{
+  opacity:1;
+}
+
+#adminMessage[data-type="success"]{
+  color:#7c9a7c;
+}
+
+#adminMessage[data-type="error"]{
+  color:#b66b6b;
+}
+
+
+/* =========================================================
+   LIBRARY HEADER
+========================================================= */
+
+.admin-library-header{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:20px;
+}
+
+.admin-library-header h2{
+  font-size:30px;
+
+  letter-spacing:-1.5px;
+}
+
+.admin-library-count{
+  color:#555;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+
+/* =========================================================
+   SONG LIST
+========================================================= */
+
+#adminSongList{
+  display:flex;
+  flex-direction:column;
+
+  gap:8px;
+}
+
+.admin-song{
+  min-height:76px;
+
+  display:grid;
+
+  grid-template-columns:
+    56px
+    minmax(0,1fr)
+    auto;
+
+  align-items:center;
+
+  gap:15px;
+
+  padding:10px 12px;
+
+  border:1px solid rgba(255,255,255,.065);
+
+  border-radius:13px;
+
+  background:rgba(255,255,255,.025);
+
+  transition:.2s ease;
+}
+
+.admin-song:hover{
+  background:rgba(255,255,255,.045);
+
+  border-color:
+    rgba(255,255,255,.12);
+}
+
+
+/* =========================================================
+   SONG COVER
+========================================================= */
+
+.admin-song-cover{
+  width:56px;
+  height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:10px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #444 0 4%,
+      transparent 5%
+    ),
+    linear-gradient(
+      135deg,
+      #191919,
+      #070707
+    );
+
+  background-size:cover;
+  background-position:center;
+
+  color:#666;
+
+  font-size:20px;
+
+  overflow:hidden;
+}
+
+
+/* =========================================================
+   SONG INFO
+========================================================= */
+
+.admin-song-info{
+  min-width:0;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:5px;
+}
+
+.admin-song-info strong{
+  color:#ddd;
+
+  font-size:12px;
+
+  font-weight:500;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.admin-song-info span{
+  color:#666;
+
+  font-size:9px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.admin-song-info small{
+  color:#444;
+
+  font-size:8px;
+
+  letter-spacing:.4px;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.admin-delete{
+  min-width:72px;
+
+  height:34px;
+
+  padding:0 12px;
+
+  border:1px solid rgba(255,70,70,.12);
+
+  border-radius:8px;
+
+  background:rgba(255,255,255,.025);
+
+  color:#704848;
+
+  cursor:pointer;
+
+  font-size:8px;
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+  transition:.2s ease;
+}
+
+.admin-delete:hover{
+  color:#ff7777;
+
+  border-color:
+    rgba(255,80,80,.3);
+
+  background:
+    rgba(255,60,60,.05);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+#adminEmpty{
+  padding:45px 20px;
+
+  border:1px dashed
+    rgba(255,255,255,.08);
+
+  border-radius:14px;
+
+  color:#444;
+
+  text-align:center;
+
+  font-size:9px;
+
+  letter-spacing:1.5px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.admin-stats{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:10px;
+
+  margin-bottom:20px;
+}
+
+.admin-stat{
+  padding:22px;
+
+  border:1px solid
+    rgba(255,255,255,.07);
+
+  border-radius:14px;
+
+  background:
+    rgba(255,255,255,.025);
+}
+
+.admin-stat span{
+  display:block;
+
+  color:#555;
+
+  font-size:8px;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:10px;
+}
+
+.admin-stat strong{
+  color:#ccc;
+
+  font-size:24px;
+
+  letter-spacing:-1px;
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.admin-warning{
+  padding:15px 17px;
+
+  margin-bottom:20px;
+
+  border:1px solid
+    rgba(180,120,60,.15);
+
+  border-radius:10px;
+
+  background:
+    rgba(180,120,60,.035);
+
+  color:#806f5d;
+
+  font-size:9px;
+
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.admin-footer{
+  padding:40px 7vw 70px;
+
+  border-top:
+    1px solid #151515;
+
+  color:#444;
+
+  text-align:center;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+  .admin-nav{
+    height:64px;
+
+    padding:
+      0 20px;
+  }
+
+  .admin-logo{
+    font-size:21px;
+  }
+
+  .admin-nav-links{
+    gap:12px;
+  }
+
+  .admin-nav-links a{
+    font-size:8px;
+  }
+
+  .admin-container{
+    width:calc(100% - 30px);
+
+    padding:
+      55px 0
+      100px;
+  }
+
+  .admin-header{
+    margin-bottom:32px;
+  }
+
+  .admin-header h1{
+    font-size:52px;
+
+    letter-spacing:-4px;
+  }
+
+  .admin-card{
+    padding:20px;
+
+    border-radius:15px;
+  }
+
+  .admin-stats{
+    grid-template-columns:
+      1fr;
+  }
+
+  .admin-song{
+    grid-template-columns:
+      48px
+      minmax(0,1fr);
+
+    gap:11px;
+  }
+
+  .admin-song-cover{
+    width:48px;
+    height:48px;
+  }
+
+  .admin-delete{
+    grid-column:2;
+
+    justify-self:start;
+
+    min-width:65px;
+
+    height:30px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:420px){
+
+  .admin-nav-links a:first-child{
+    display:none;
+  }
+
+  .admin-container{
+    width:calc(100% - 24px);
+  }
+
+  .admin-header h1{
+    font-size:45px;
+
+    letter-spacing:-3px;
+  }
+
+  .admin-card{
+    padding:16px;
+  }
+
+  .admin-library-header h2{
+    font-size:25px;
+  }
+
+}
