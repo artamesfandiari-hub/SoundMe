@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>SoundMe — Login</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       LOGIN PAGE
+    ===================================================== */
+
+    .auth-page {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        100px 20px;
+
+      position: relative;
+
+    }
+
+
+    .auth-box {
+
+      width:
+        min(420px, 100%);
+
+      padding:
+        42px 35px;
+
+      background:
+        rgba(12,12,14,.78);
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 18px;
+
+      backdrop-filter:
+        blur(25px);
+
+      -webkit-backdrop-filter:
+        blur(25px);
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.55);
+
+    }
+
+
+    .auth-logo {
+
+      display: block;
+
+      margin-bottom: 42px;
+
+      font-size: 27px;
+
+      font-weight: 800;
+
+      letter-spacing:
+        -1.5px;
+
+    }
+
+
+    .auth-logo span {
+
+      color: #777;
+
+      font-weight: 300;
+
+    }
+
+
+    .auth-title {
+
+      font-size: 42px;
+
+      line-height: .95;
+
+      letter-spacing:
+        -3px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .auth-description {
+
+      color: #666;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .auth-form {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 15px;
+
+    }
+
+
+    .auth-field {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 8px;
+
+    }
+
+
+    .auth-field label {
+
+      color: #666;
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .auth-field input {
+
+      width: 100%;
+
+      height: 48px;
+
+      padding:
+        0 14px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.10);
+
+      border-radius: 9px;
+
+      outline: none;
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: #eee;
+
+      font-size: 13px;
+
+      transition:
+        border-color .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .auth-field input:focus {
+
+      border-color:
+        rgba(255,255,255,.3);
+
+      background:
+        rgba(255,255,255,.055);
+
+    }
+
+
+    .auth-field input::placeholder {
+
+      color: #444;
+
+    }
+
+
+    .auth-submit {
+
+      width: 100%;
+
+      height: 50px;
+
+      margin-top: 8px;
+
+      border: 0;
+
+      border-radius: 9px;
+
+      background: #eee;
+
+      color: #050505;
+
+      cursor: pointer;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .auth-submit:hover {
+
+      background: #fff;
+
+      transform:
+        translateY(-1px);
+
+    }
+
+
+    .auth-submit:disabled {
+
+      opacity: .5;
+
+      cursor: wait;
+
+      transform: none;
+
+    }
+
+
+    .auth-message {
+
+      min-height: 18px;
+
+      margin-top: 14px;
+
+      color: #777;
+
+      font-size: 10px;
+
+      line-height: 1.5;
+
+      text-align: center;
+
+    }
+
+
+    .auth-message.error {
+
+      color: #b66;
+
+    }
+
+
+    .auth-message.success {
+
+      color: #8a8;
+
+    }
+
+
+    .auth-switch {
+
+      margin-top: 28px;
+
+      padding-top: 24px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+      text-align: center;
+
+      color: #555;
+
+      font-size: 10px;
+
+    }
+
+
+    .auth-switch button {
+
+      border: 0;
+
+      background: transparent;
+
+      color: #aaa;
+
+      cursor: pointer;
+
+      font-size: 10px;
+
+      margin-left: 4px;
+
+    }
+
+
+    .auth-switch button:hover {
+
+      color: #fff;
+
+    }
+
+
+    .back-home {
+
+      display: block;
+
+      margin-top: 25px;
+
+      color: #444;
+
+      text-align: center;
+
+      font-size: 9px;
+
+      letter-spacing: 1.5px;
+
+      transition:
+        color .2s ease;
+
+    }
+
+
+    .back-home:hover {
+
+      color: #999;
+
+    }
+
+
+    .auth-loading {
+
+      display: none;
+
+      width: 14px;
+
+      height: 14px;
+
+      margin: 0 auto;
+
+      border:
+        1px solid
+        rgba(0,0,0,.25);
+
+      border-top-color:
+        #000;
+
+      border-radius: 50%;
+
+      animation:
+        authSpin .7s linear infinite;
+
+    }
+
+
+    .auth-submit.loading .auth-button-text {
+
+      display: none;
+
+    }
+
+
+    .auth-submit.loading .auth-loading {
+
+      display: block;
+
+    }
+
+
+    @keyframes authSpin {
+
+      to {
+
+        transform:
+          rotate(360deg);
+
+      }
+
+    }
+
+
+    /* REGISTER STATE */
+
+    .register-only {
+
+      display: none;
+
+    }
+
+
+    .auth-box.register-mode
+    .register-only {
+
+      display: flex;
+
+    }
+
+
+    .auth-box.register-mode
+    .auth-title-login {
+
+      display: none;
+
+    }
+
+
+    .auth-box.register-mode
+    .auth-title-register {
+
+      display: block;
+
+    }
+
+
+    .auth-title-register {
+
+      display: none;
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .auth-page {
+
+        padding:
+          80px 16px;
+
+      }
+
+
+      .auth-box {
+
+        padding:
+          32px 22px;
+
+      }
+
+
+      .auth-title {
+
+        font-size: 37px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="noise-layer"></div>
+
+  <div class="background-shapes">
+
+    <div class="shape shape-1"></div>
+
+    <div class="shape shape-2"></div>
+
+    <div class="shape shape-3"></div>
+
+    <div class="shape shape-4"></div>
+
+    <div class="shape shape-5"></div>
+
+    <div class="shape shape-6"></div>
+
+  </div>
+
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+      Sound<span>Me</span>
+    </a>
+
+    <nav class="nav-links">
+
+      <a href="index.html">
+        HOME
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- AUTH -->
+
+  <main class="auth-page">
+
+    <section
+      class="auth-box"
+      id="authBox"
+    >
+
+      <a
+        href="index.html"
+        class="auth-logo"
+      >
+        Sound<span>Me</span>
+      </a>
+
+
+      <!-- LOGIN TITLE -->
+
+      <h1 class="auth-title auth-title-login">
+        WELCOME
+        <br>
+        BACK.
+      </h1>
+
+
+      <!-- REGISTER TITLE -->
+
+      <h1 class="auth-title auth-title-register">
+        JOIN
+        <br>
+        SOUNDME.
+      </h1>
+
+
+      <p class="auth-description">
+
+        <span id="authDescriptionLogin">
+          Sign in to your SoundMe account
+          to access your music.
+        </span>
+
+        <span
+          id="authDescriptionRegister"
+          style="display:none;"
+        >
+          Create an account and start
+          exploring SoundMe.
+        </span>
+
+      </p>
+
+
+      <!-- FORM -->
+
+      <form
+        class="auth-form"
+        id="authForm"
+      >
+
+
+        <!-- EMAIL -->
+
+        <div class="auth-field">
+
+          <label for="email">
+            EMAIL
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="auth-field">
+
+          <label for="password">
+            PASSWORD
+          </label>
+
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="••••••••"
+            minlength="6"
+            required
+          >
+
+        </div>
+
+
+        <!-- CONFIRM PASSWORD -->
+
+        <div
+          class="auth-field register-only"
+          id="confirmPasswordField"
+        >
+
+          <label for="confirmPassword">
+            CONFIRM PASSWORD
+          </label>
+
+          <input
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            autocomplete="new-password"
+            placeholder="••••••••"
+            minlength="6"
+          >
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="auth-submit"
+          id="authSubmit"
+        >
+
+          <span class="auth-button-text">
+            LOGIN
+          </span>
+
+          <span class="auth-loading"></span>
+
+        </button>
+
+
+      </form>
+
+
+      <!-- MESSAGE -->
+
+      <div
+        class="auth-message"
+        id="authMessage"
+      ></div>
+
+
+      <!-- SWITCH -->
+
+      <div class="auth-switch">
+
+        <span id="switchText">
+          Don't have an account?
+        </span>
+
+        <button
+          type="button"
+          id="switchAuthMode"
+        >
+          CREATE ACCOUNT
+        </button>
+
+      </div>
+
+
+      <!-- BACK -->
+
+      <a
+        href="index.html"
+        class="back-home"
+      >
+        ← BACK TO SOUNDME
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- AUTH SCRIPT -->
+
+  <script
+    src="auth.js"
+    defer
+  ></script>
+
+</body>
+
+</html>
