@@ -61,9 +61,7 @@ button,
   margin:auto;
 }
 
-/* ================================
-   HEADER
-================================ */
+/* HEADER */
 
 .header{
   padding:24px 18px 16px;
@@ -81,9 +79,7 @@ button,
   font-size:13px;
 }
 
-/* ================================
-   SEARCH
-================================ */
+/* SEARCH */
 
 .search-wrap{
   padding:0 18px 22px;
@@ -108,9 +104,7 @@ button,
   color:#666;
 }
 
-/* ================================
-   LIBRARY
-================================ */
+/* LIBRARY */
 
 .section{
   padding:0 18px;
@@ -149,18 +143,15 @@ button,
   height:50px;
   flex:0 0 50px;
   border-radius:9px;
-
   background:
     linear-gradient(
       145deg,
       #292929,
       #151515
     );
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:#888;
 }
 
@@ -190,33 +181,23 @@ button,
   font-size:11px;
 }
 
-/* ================================
-   MINI PLAYER
-================================ */
+/* MINI PLAYER */
 
 .mini{
   position:fixed;
   z-index:50;
-
   left:10px;
   right:10px;
-
   bottom:
     calc(8px + env(safe-area-inset-bottom));
-
   max-width:700px;
   margin:auto;
-
   padding:9px;
-
   border:1px solid #292929;
   border-radius:15px;
-
   background:rgba(20,20,20,.96);
-
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
-
   box-shadow:
     0 12px 40px rgba(0,0,0,.5);
 }
@@ -231,14 +212,11 @@ button,
   width:43px;
   height:43px;
   flex:0 0 43px;
-
   border-radius:8px;
   background:#222;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:#888;
 }
 
@@ -266,11 +244,9 @@ button,
 .icon-button{
   width:39px;
   height:39px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border-radius:50%;
 }
 
@@ -287,47 +263,35 @@ button,
 .mini-progress{
   width:100%;
   height:2px;
-
   margin-top:7px;
-
   appearance:none;
   -webkit-appearance:none;
-
   background:#333;
 }
 
 .mini-progress::-webkit-slider-thumb{
   appearance:none;
   -webkit-appearance:none;
-
   width:7px;
   height:7px;
-
   border-radius:50%;
   background:#fff;
 }
 
-/* ================================
-   FULL PLAYER
-================================ */
+/* FULL PLAYER */
 
 .full{
   position:fixed;
   inset:0;
   z-index:100;
-
   display:flex;
   flex-direction:column;
-
   padding:
     calc(12px + env(safe-area-inset-top))
     18px
     calc(18px + env(safe-area-inset-bottom));
-
   background:#090909;
-
   transform:translateY(100%);
-
   transition:
     transform .35s cubic-bezier(.2,.8,.2,1);
 }
@@ -338,7 +302,6 @@ button,
 
 .full-header{
   height:45px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -347,10 +310,8 @@ button,
 .full-header button{
   width:40px;
   height:40px;
-
   border-radius:50%;
   background:#151515;
-
   display:flex;
   align-items:center;
   justify-content:center;
@@ -367,18 +328,14 @@ button,
   letter-spacing:1.5px;
 }
 
-/* ================================
-   VISUALIZER
-================================ */
+/* VISUALIZER */
 
 .visualizer{
   flex:1;
   min-height:260px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   position:relative;
 }
 
@@ -389,35 +346,26 @@ button,
 
 .visualizer-center{
   position:absolute;
-
   width:115px;
   height:115px;
-
   border-radius:50%;
-
   background:
     radial-gradient(
       circle,
       #292929,
       #111 70%
     );
-
   box-shadow:
     0 0 60px rgba(255,255,255,.06);
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:#888;
   font-size:28px;
-
   pointer-events:none;
 }
 
-/* ================================
-   INFO
-================================ */
+/* INFO */
 
 .full-info{
   margin-top:5px;
@@ -427,7 +375,6 @@ button,
   font-size:25px;
   font-weight:700;
   letter-spacing:-.7px;
-
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -439,9 +386,7 @@ button,
   font-size:14px;
 }
 
-/* ================================
-   SEEK
-================================ */
+/* SEEK */
 
 .seek-area{
   margin-top:24px;
@@ -450,10 +395,8 @@ button,
 .seek{
   width:100%;
   height:4px;
-
   appearance:none;
   -webkit-appearance:none;
-
   background:#333;
   border-radius:10px;
 }
@@ -461,10 +404,8 @@ button,
 .seek::-webkit-slider-thumb{
   appearance:none;
   -webkit-appearance:none;
-
   width:12px;
   height:12px;
-
   border-radius:50%;
   background:#fff;
 }
@@ -472,22 +413,17 @@ button,
 .times{
   display:flex;
   justify-content:space-between;
-
   margin-top:7px;
-
   color:#666;
   font-size:10px;
 }
 
-/* ================================
-   CONTROLS
-================================ */
+/* CONTROLS */
 
 .controls{
   display:flex;
   align-items:center;
   justify-content:center;
-
   gap:24px;
   margin-top:24px;
 }
@@ -495,11 +431,9 @@ button,
 .control{
   width:40px;
   height:40px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:#aaa;
 }
 
@@ -515,12 +449,9 @@ button,
 .play{
   width:64px;
   height:64px;
-
   border-radius:50%;
-
   background:#fff;
   color:#000;
-
   display:flex;
   align-items:center;
   justify-content:center;
@@ -531,15 +462,12 @@ button,
   height:25px;
 }
 
-/* ================================
-   BOTTOM
-================================ */
+/* BOTTOM */
 
 .bottom-controls{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   margin-top:18px;
 }
 
@@ -554,32 +482,22 @@ button,
   height:19px;
 }
 
-/* ================================
-   QUEUE
-================================ */
+/* QUEUE */
 
 .queue{
   position:fixed;
-
   z-index:150;
-
   left:0;
   right:0;
   bottom:0;
-
   max-height:65vh;
-
   padding:
     12px 18px
     calc(18px + env(safe-area-inset-bottom));
-
   border-radius:20px 20px 0 0;
-
   background:#161616;
   border-top:1px solid #292929;
-
   transform:translateY(100%);
-
   transition:
     transform .3s ease;
 }
@@ -591,9 +509,7 @@ button,
 .handle{
   width:38px;
   height:4px;
-
   margin:0 auto 16px;
-
   border-radius:10px;
   background:#444;
 }
@@ -605,7 +521,6 @@ button,
 
 .queue-list{
   margin-top:10px;
-
   max-height:48vh;
   overflow:auto;
 }
@@ -613,7 +528,6 @@ button,
 .queue-item{
   display:flex;
   align-items:center;
-
   gap:10px;
   padding:9px 0;
 }
@@ -625,7 +539,6 @@ button,
 
 .queue-item-title{
   font-size:13px;
-
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -637,9 +550,7 @@ button,
   font-size:11px;
 }
 
-/* ================================
-   EMPTY / LOADING
-================================ */
+/* EMPTY / LOADING */
 
 .empty,
 .loading{
@@ -653,9 +564,7 @@ button,
   display:none;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* RESPONSIVE */
 
 @media(max-height:650px){
 
@@ -704,7 +613,6 @@ Music Library
 
 </header>
 
-
 <div class="search-wrap">
 
 <input
@@ -716,7 +624,6 @@ Music Library
 >
 
 </div>
-
 
 <main class="section">
 
@@ -735,7 +642,6 @@ All Songs
 
 </div>
 
-
 <div
   id="loading"
   class="loading"
@@ -743,11 +649,9 @@ All Songs
 Loading library...
 </div>
 
-
 <div
   id="songList"
 ></div>
-
 
 <div
   id="empty"
@@ -761,9 +665,7 @@ Your music library is empty.
 </div>
 
 
-<!-- ================================
-     MINI PLAYER
-================================ -->
+<!-- MINI PLAYER -->
 
 <div
   id="mini"
@@ -810,7 +712,6 @@ Your music library is empty.
 
 </div>
 
-
 <div class="mini-info">
 
 <div
@@ -828,7 +729,6 @@ Select a song
 </div>
 
 </div>
-
 
 <button
   id="miniPlay"
@@ -851,7 +751,6 @@ Select a song
 
 </div>
 
-
 <input
   id="miniProgress"
   class="mini-progress"
@@ -865,9 +764,7 @@ Select a song
 </div>
 
 
-<!-- ================================
-     FULL PLAYER
-================================ -->
+<!-- FULL PLAYER -->
 
 <div
   id="full"
@@ -899,11 +796,9 @@ Select a song
 
 </button>
 
-
 <div class="now-playing">
 NOW PLAYING
 </div>
-
 
 <button
   id="openQueueButton"
@@ -929,7 +824,6 @@ NOW PLAYING
 
 </div>
 
-
 <div class="visualizer">
 
 <canvas
@@ -941,7 +835,6 @@ NOW PLAYING
 </div>
 
 </div>
-
 
 <div class="full-info">
 
@@ -960,7 +853,6 @@ Select a song
 </div>
 
 </div>
-
 
 <div class="seek-area">
 
@@ -987,7 +879,6 @@ Select a song
 </div>
 
 </div>
-
 
 <div class="controls">
 
@@ -1031,7 +922,6 @@ Select a song
 
 </button>
 
-
 <button
   id="previous"
   class="control"
@@ -1050,7 +940,6 @@ Select a song
 </svg>
 
 </button>
-
 
 <button
   id="mainPlay"
@@ -1071,7 +960,6 @@ Select a song
 
 </button>
 
-
 <button
   id="next"
   class="control"
@@ -1090,7 +978,6 @@ Select a song
 </svg>
 
 </button>
-
 
 <button
   id="repeat"
@@ -1134,7 +1021,6 @@ Select a song
 
 </div>
 
-
 <div class="bottom-controls">
 
 <button
@@ -1165,7 +1051,6 @@ Select a song
 
 </button>
 
-
 <button
   id="queue2"
   type="button"
@@ -1193,9 +1078,7 @@ Select a song
 </div>
 
 
-<!-- ================================
-     QUEUE
-================================ -->
+<!-- QUEUE -->
 
 <div
   id="queue"
@@ -1342,9 +1225,7 @@ const muteIcon =
   document.getElementById("muteIcon");
 
 const openQueueButton =
-  document.getElementById(
-    "openQueueButton"
-  );
+  document.getElementById("openQueueButton");
 
 const queue2 =
   document.getElementById("queue2");
@@ -1365,11 +1246,37 @@ const canvas =
    USER
 ================================ */
 
-const telegramUser =
-  tg?.initDataUnsafe?.user ||
-  null;
+function getTelegramUser(){
 
-if(telegramUser){
+  if(
+    window.Telegram &&
+    window.Telegram.WebApp &&
+    window.Telegram.WebApp.initDataUnsafe &&
+    window.Telegram.WebApp.initDataUnsafe.user
+  ){
+
+    return window.Telegram.WebApp
+      .initDataUnsafe.user;
+
+  }
+
+  return null;
+
+}
+
+
+let telegramUser =
+  getTelegramUser();
+
+
+function updateUser(){
+
+  telegramUser =
+    getTelegramUser();
+
+  if(!telegramUser){
+    return false;
+  }
 
   const name =
     `${telegramUser.first_name || ""} ${
@@ -1382,6 +1289,8 @@ if(telegramUser){
       `Hi, ${name}`;
 
   }
+
+  return true;
 
 }
 
@@ -1452,6 +1361,31 @@ function formatTime(value){
 
 async function loadSongs(){
 
+  /*
+    Telegram sometimes needs a moment before
+    initDataUnsafe.user becomes available.
+  */
+
+  updateUser();
+
+  let attempts = 0;
+
+  while(
+    !telegramUser?.id &&
+    attempts < 20
+  ){
+
+    await new Promise(
+      resolve =>
+        setTimeout(resolve,150)
+    );
+
+    updateUser();
+
+    attempts++;
+
+  }
+
   if(!telegramUser?.id){
 
     loading.textContent =
@@ -1461,15 +1395,33 @@ async function loadSongs(){
 
   }
 
+  const userId =
+    String(telegramUser.id);
+
+  console.log(
+    "SoundMe user_id:",
+    userId
+  );
+
   try{
+
+    const url =
+      `${API}/songs?user_id=${
+        encodeURIComponent(userId)
+      }`;
+
+    console.log(
+      "Loading songs:",
+      url
+    );
 
     const response =
       await fetch(
-        `${API}/songs?user_id=${
-          encodeURIComponent(
-            telegramUser.id
-          )
-        }`
+        url,
+        {
+          method:"GET",
+          cache:"no-store"
+        }
       );
 
     if(!response.ok){
@@ -1482,6 +1434,11 @@ async function loadSongs(){
 
     const data =
       await response.json();
+
+    console.log(
+      "SoundMe songs response:",
+      data
+    );
 
     if(!data.success){
 
@@ -1501,6 +1458,7 @@ async function loadSongs(){
       "none";
 
     renderSongs(songs);
+
     renderQueue();
 
   }catch(error){
@@ -1759,10 +1717,12 @@ function togglePlay(){
 
     audio.play()
       .catch(error=>{
+
         console.error(
           "Play error:",
           error
         );
+
       });
 
   }else{
@@ -1823,6 +1783,7 @@ audio.addEventListener(
   ()=>{
 
     setPlayIcon();
+
     startVisualizer();
 
     if(
@@ -1830,8 +1791,11 @@ audio.addEventListener(
     ){
 
       try{
-        navigator.mediaSession.playbackState =
+
+        navigator.mediaSession
+          .playbackState =
           "playing";
+
       }catch(e){}
 
     }
@@ -1851,8 +1815,11 @@ audio.addEventListener(
     ){
 
       try{
-        navigator.mediaSession.playbackState =
+
+        navigator.mediaSession
+          .playbackState =
           "paused";
+
       }catch(e){}
 
     }
@@ -1967,10 +1934,12 @@ audio.addEventListener(
 
       audio.play()
         .catch(error=>{
+
           console.error(
             "Repeat playback error:",
             error
           );
+
         });
 
     }else{
@@ -2335,10 +2304,6 @@ queue2.addEventListener(
 );
 
 
-/* ================================
-   CLOSE QUEUE ON OUTSIDE TOUCH
-================================ */
-
 queue.addEventListener(
   "click",
   event=>{
@@ -2636,171 +2601,3 @@ function drawVisualizer(){
     ctx.lineCap = "round";
 
     ctx.strokeStyle =
-      `rgba(
-        255,
-        255,
-        255,
-        ${.12 + value * .8}
-      )`;
-
-    ctx.stroke();
-
-  }
-
-}
-
-
-/* ================================
-   MEDIA SESSION
-================================ */
-
-function updateMediaSession(song){
-
-  if(
-    !("mediaSession" in navigator)
-  ){
-
-    return;
-
-  }
-
-  try{
-
-    navigator.mediaSession.metadata =
-      new MediaMetadata({
-
-        title:
-          song.title ||
-          "Unknown Song",
-
-        artist:
-          song.artist ||
-          "Unknown Artist",
-
-        album:
-          "SoundMe"
-
-      });
-
-  }catch(error){
-
-    console.error(
-      "Media Session:",
-      error
-    );
-
-  }
-
-}
-
-
-if(
-  "mediaSession" in navigator
-){
-
-  try{
-
-    navigator.mediaSession
-      .setActionHandler(
-        "play",
-        ()=>{
-          audio.play()
-            .catch(()=>{});
-        }
-      );
-
-    navigator.mediaSession
-      .setActionHandler(
-        "pause",
-        ()=>{
-          audio.pause();
-        }
-      );
-
-    navigator.mediaSession
-      .setActionHandler(
-        "nexttrack",
-        nextSong
-      );
-
-    navigator.mediaSession
-      .setActionHandler(
-        "previoustrack",
-        previousSong
-      );
-
-    try{
-
-      navigator.mediaSession
-        .setActionHandler(
-          "seekbackward",
-          details=>{
-
-            audio.currentTime =
-              Math.max(
-                0,
-                audio.currentTime -
-                (details.seekOffset || 10)
-              );
-
-          }
-        );
-
-      navigator.mediaSession
-        .setActionHandler(
-          "seekforward",
-          details=>{
-
-            audio.currentTime =
-              Math.min(
-                audio.duration || Infinity,
-                audio.currentTime +
-                (details.seekOffset || 10)
-              );
-
-          }
-        );
-
-    }catch(e){}
-
-  }catch(e){}
-
-}
-
-
-/* ================================
-   PAGE VISIBILITY
-================================ */
-
-document.addEventListener(
-  "visibilitychange",
-  ()=>{
-
-    if(
-      !document.hidden &&
-      audioContext &&
-      audioContext.state ===
-      "suspended"
-    ){
-
-      audioContext.resume()
-        .catch(()=>{});
-
-    }
-
-  }
-);
-
-
-/* ================================
-   INIT
-================================ */
-
-setPlayIcon();
-
-loadSongs();
-
-</script>
-
-</body>
-</html>
